@@ -1,49 +1,99 @@
-/* ===== Basic Page Reset ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===== Dashboard Layout ===== */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
 }
 
-/* ===== Body Styling ===== */
-body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f6fa;
-    color: #2f3640;
-    line-height: 1.6;
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #273c75;
+    color: #f5f6fa;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-/* ===== Headings ===== */
-h1 {
+.sidebar h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    color: #dcdde1;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #40739e;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    background-color: #f5f6fa;
+    padding: 30px;
+}
+
+.dashboard-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
     color: #273c75;
-    margin-bottom: 10px;
-    text-align: center;
 }
 
-/* ===== Paragraphs ===== */
-p {
+.dashboard-header p {
     font-size: 1.1rem;
-    text-align: center;
     color: #353b48;
 }
 
-/* ===== Links ===== */
-a {
+/* Dashboard Cards */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
     color: #0097e6;
-    text-decoration: none;
+    margin-bottom: 10px;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* ===== Container (Optional Wrapper) ===== */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2f3640;
 }
